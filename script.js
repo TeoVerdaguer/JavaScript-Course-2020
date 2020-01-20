@@ -1,5 +1,5 @@
 /**************
- Boolean Logic
+* Boolean Logic
 **************/
 
 /*
@@ -18,7 +18,7 @@ if (age < 13) {
 */
 
 /**************
- The ternary Operator
+* The ternary Operator
 **************/
 
 /*
@@ -32,7 +32,7 @@ var drink = age > 18 ? 'beer' : 'juice';
 console.log(drink);
 
 /**************
- The Switch Statement
+* The Switch Statement
 **************/
 
 /*
@@ -55,7 +55,7 @@ switch (job) {
 
 
 /**************
- Truthy and Falsy values and equality operators
+* Truthy and Falsy values and equality operators
 **************/
 
 // falsy values: undefined, null, 0, '', NaN
@@ -78,7 +78,7 @@ if (height == '23') {
 */
 
 /**************
- Coding challenge 2 - Basketball Games
+* Coding challenge 2 - Basketball Games
 **************/
 /*
 // John's team Scores
@@ -115,10 +115,10 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
 }
 
 /**************
- Functions
+* Functions
 **************/
-
-fuction calculateAge (birthYear){
+/*
+function calculateAge (birthYear){
   return 2020 - birthYear;
 }
 
@@ -129,7 +129,7 @@ console.log('John\'s age: ' + ageJohn);
 console.log('Mike\'s age: ' + ageMike);
 console.log('Jane\'s age: ' + ageJane);
 
-fuction yearsUntilRetirement(year, firstName) {
+function yearsUntilRetirement(year, firstName) {
   var age = calculateAge(year);
   var retirement = 65 - age;
   
@@ -145,3 +145,67 @@ yearsUntilRetirement(1948, 'John');
 yearsUntilRetirement(1969, 'Jane');
 
 console.log('hola');
+*/
+
+/**************
+* CODE CHALLENGE 3
+**************/
+
+/*
+var bill1 = 124;
+var bill2 = 48;
+var bill3 = 268;
+
+function calculateTip(bill){
+  if (bill < 50) {
+    var tip = bill * 0.2;
+  } else if (bill > 50 && bill < 200) {
+    var tip = bill * 0.15;
+  } else {
+    var tip = bill * 0.1;
+  }
+  return tip;
+}
+
+var tips = [calculateTip(bill1), calculateTip(bill2), calculateTip(bill3)];
+var bills = [ (bill1 + tips[0]), (bill2 + tips[1]), (bill3 + tips[2])];
+
+console.log(tips);
+console.log(bills);
+*/
+
+/**************
+* Objects and properties
+**************/
+/*
+// Object literal
+var john = {
+  firstName: 'John',
+  lastName: 'Smith',
+  birthYear: 1990,
+  family: ['Jane', 'Mark', 'Bob', 'Emily'],
+  job: 'teacher',
+  isMarried: false,
+};
+
+console.log(john.firstName);
+console.log(john['lastName']);
+var x = 'birthYear';
+console.log(john[x]);
+
+john.job = 'designer';
+john['isMarried'] = true;
+console.log(john);
+
+// New object syntax
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = 1969;
+jane['lastName'] = 'Smith'
+console.log(jane);
+*/
+
+/**************
+* Objects and methods
+**************/
+
