@@ -234,7 +234,7 @@ console.log(john);
 // method to calc bmi - save bmi to object and return bmi too
 
 // log highest bmi (name and bmi) *consider they can have the same bmi
-
+/*
 var mark = {
   fullName: 'Mark Miller',
   mass: 78,
@@ -265,3 +265,5 @@ if (john.bmi > mark.bmi) {
 } else {
   console.log('Mark and John have the same BMI.');
 }
+*/
+
