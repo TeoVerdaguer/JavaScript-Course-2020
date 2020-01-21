@@ -1,6 +1,6 @@
 /**************
-* CODING CHALLENGE 1
-**************/
+ * CODING CHALLENGE 1
+ **************/
 
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -29,8 +29,8 @@ console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
 */
 
 /**************
-* If / else statements
-**************/
+ * If / else statements
+ **************/
 
 /*
 var firstName = 'John';
@@ -67,8 +67,8 @@ if (BMIMark > BMIJohn) {
 */
 
 /**************
-* Boolean Logic
-**************/
+ * Boolean Logic
+ **************/
 
 /*
 var firstName = 'John';
@@ -86,8 +86,8 @@ if (age < 13) {
 */
 
 /**************
-* The ternary Operator
-**************/
+ * The ternary Operator
+ **************/
 
 /*
 var firstName = 'John';
@@ -121,10 +121,9 @@ switch (job) {
 }
 */
 
-
 /**************
-* Truthy and Falsy values and equality operators
-**************/
+ * Truthy and Falsy values and equality operators
+ **************/
 
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: Non falsy values
@@ -146,8 +145,8 @@ if (height == '23') {
 */
 
 /**************
-* CODING CHALLENGE 2
-**************/
+ * CODING CHALLENGE 2
+ **************/
 
 /*
 John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
@@ -230,8 +229,8 @@ console.log('hola');
 */
 
 /**************
-* CODING CHALLENGE 3
-**************/
+ * CODING CHALLENGE 3
+ **************/
 
 /*
 John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
@@ -271,8 +270,8 @@ console.log(bills);
 */
 
 /**************
-* Objects and properties
-**************/
+ * Objects and properties
+ **************/
 /*
 // Object literal
 var john = {
@@ -302,8 +301,8 @@ console.log(jane);
 */
 
 /**************
-* Objects and methods
-**************/
+ * Objects and methods
+ **************/
 /*
 var john = {
   firstName: 'John',
@@ -322,8 +321,8 @@ console.log(john);
 */
 
 /**************
-* CODING CHALLENGE 4
-**************/
+ * CODING CHALLENGE 4
+ **************/
 
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
@@ -370,8 +369,8 @@ if (john.bmi > mark.bmi) {
 */
 
 /**************
-* Loops and Iteration
-**************/
+ * Loops and Iteration
+ **************/
 /*
 // for loop
 for (var i = 0; i < 10; i++) {
@@ -414,8 +413,8 @@ for (var i = john.length - 1; i >= 0; i--) {
 */
 
 /**************
-* CODING CHALLENGE 5
-**************/
+ * CODING CHALLENGE 5
+ **************/
 
 /*
 Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
@@ -441,3 +440,71 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 GOOD LUCK 😀
 */
 
+var john = {
+  fullName: 'John Smith',
+  bills: [124, 48, 268, 180, 42],
+  calcTip() {
+    this.tips = [];
+    this.finalAmounts = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      // Determine percentage
+      var percentage;
+      var bill = this.bills[i];
+
+      if (bill < 50) {
+        percentage = .2;
+      } else if (this.bills[i] >= 50 && this.bills[i] < 200) {
+        percentage = .15;
+      } else {
+        percentage = .1;
+      }
+
+      // Add results to arrays
+      this.tips[i] = bill * percentage;
+      this.finalAmounts[i] = bill + bill * percentage;
+    }
+  }
+}; 
+
+
+var mark = {
+  fullName: 'Mark Miller',
+  bills: [77, 375, 110, 45],
+  calcTip() {
+    this.tips = [];
+    this.finalAmounts = [];
+
+    for (var i = 0; i < this.bills.length; i++) {
+      // Determine percentage
+      var percentage;
+      var bill = this.bills[i];
+
+      if (bill < 100) {
+        percentage = .2;
+      } else if (this.bills[i] >= 100 && this.bills[i] < 300) {
+        percentage = .1;
+      } else {
+        percentage = .25;
+      }
+
+      // Add results to arrays
+      this.tips[i] = bill * percentage;
+      this.finalAmounts[i] = bill + bill * percentage;
+    }
+  }
+}; 
+
+
+// Do the calculations
+john.calcTip();
+mark.calcTip();
+
+john.average = calcAvgTip(john.tips);
+mark.average = calcAvgTip(mark.tips);
+
+if (john.average > mark.average) {
+  console.log(john.fullName + '\s family pays higher tips, with an average of $' + john.average);
+} else if (mark.average > john.average) {
+  console.log(mark.fullName + '\s family pays higher tips, with an average of $' + mark.average);
+} 
